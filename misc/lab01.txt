@@ -22,24 +22,3 @@ def train(att,tar):
                     pass
     return specific_h
 print(train(attribute,target))
-data1 = pd.read_csv("ENJOYSPORT.csv")
-data1.head()
-attribute=np.array(data1)[:,:-1]
-target = np.array(data1)[:, -1]
-print(attribute[:3])
-print(target[:3])
-def train(att,tar):
-    for i,val in enumerate(tar):
-        if val==1:
-            specific_h=att[i].copy()
-            break
-    for i,val in enumerate(att):
-        if tar[i]==1:
-            for x in range(len(specific_h)):
-                if val[x]!=specific_h[x]:
-                    specific_h[x]='?'
-                else:
-                    pass
-    return specific_h
-train(attribute, target)
-len(data1)
